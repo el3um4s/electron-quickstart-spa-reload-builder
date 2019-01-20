@@ -1,0 +1,73 @@
+{
+  "name": "electron-quickstart-spa-reload-builder",
+  "version": "1.0.0",
+  "description": "A proper Electron application quickstart for easy spa development without a framework",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir",
+    "dist:32win": "build --win --ia32 ",
+    "dist:64win": "build --win --x64",
+    "dist:32deb": "build --linux --ia32",
+    "dist:64deb": "build --linux --x64",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "repository": "https://github.com/el3um4s/electron-quickstart-spa-reload-builder",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo",
+    "spa",
+    "reload",
+    "build"
+  ],
+  "author": "Samuele de Tomasi <el3um4s@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/el3um4s/electron-quickstart-spa-reload-builder/issues"
+  },
+  "devDependencies": {
+    "electron-builder": "^20.38.5",
+    "electron-reload": "^1.4.0",
+    "electron": "^4.0.1"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.0.1"
+  },
+  "build": {
+    "productName": "EQS",
+    "appId": "com.electronquickstart.spareloadbuilder",
+    "directories": {
+      "output": "build"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "src/icons/icon.icns"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "src/icons/icon.ico"
+    },
+    "linux": {
+      "icon": "src/icons"
+    }
+  }
+}
